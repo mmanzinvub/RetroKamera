@@ -1,0 +1,35 @@
+* {
+    text-decoration: none;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    display: flex;
+}
+
+#logo-container {
+    flex-grow: 1;
+}
+
+#icons-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 20px;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.navbar-item {
+    padding: 10px 20px;
+}
