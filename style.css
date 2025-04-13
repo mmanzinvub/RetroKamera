@@ -1,35 +1,215 @@
 * {
     text-decoration: none;
     font-style: normal;
+    background-color: black;
 }
 
 body {
     font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 20px;
 }
+
+/*
+Header design
+*/
 
 .header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+    padding: 20px;
+    border-bottom: 3px solid white;
 }
 
 #logo-container {
     flex-grow: 1;
 }
 
-#icons-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 20px;
+#logo {
+    height: 150px;
 }
 
-.navbar {
+#icons-container {
     display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    width: 100%;
+    gap: 30px;
+}
+
+.header-link {
+    color: white;
+    font-size: 16px;
+    font-weight: bold;  
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 2px solid white;
+}
+
+.header-link:hover {
+    color: black;
+    background-color: white;
+}
+
+.header-link i {
+    background-color: transparent;
+    margin-right: 3px;
+}
+
+/*
+END Header design
+*/
+
+/* ------------------------ */
+
+/*
+Navbar design
+*/
+
+.navbar {
+    background-color: black;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.navbar-list {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
 }
 
 .navbar-item {
-    padding: 10px 20px;
+    margin: 0 20px;
 }
+
+.navbar-item a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid white;
+}
+
+.navbar-item a:hover {
+    background-color: white;
+    color: black;
+}
+
+/*
+END Navbar card design
+*/
+
+/* ------------------------ */
+
+/*
+Product card design
+*/
+
+.cards-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 250px;
+    margin: 30px;
+    border: 3px solid white;
+    background-color: black;
+    display: inline-block;
+    text-align: center;
+}
+
+.card-img {
+    width: 100%;
+    height: auto;
+}
+
+.card-body {
+    padding: 10px;
+    color: white;
+    border-top: 3px solid white;
+}
+
+.card-title {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.btn-buy {
+    display: inline-block;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border: 3px solid white;
+}
+
+.btn-buy:hover {
+    color: black;
+    background-color: white;
+}
+
+/*
+END Product card design
+*/
+
+/* ------------------------ */
+
+/*
+Footer design
+*/
+
+.footer {
+    background-color: black;
+    color: white;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+.footer-section {
+    text-align: center;
+    width: 50%;
+}
+
+.footer-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    border-bottom: 2px solid white;
+}
+
+.footer-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-list li {
+    margin-bottom: 5px;
+}
+
+.footer-list a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 5px 10px;
+    display: inline-block;
+    border: 2px solid white;
+    transition: all 0.3s ease; /*dodati animacije za ostale*/
+}
+
+.footer-list a:hover {
+    background-color: white;
+    color: black;
+    transform: scale(1.1);  /*dodati animacije za ostale*/
+}
+
+/*
+END Footer design
+*/
+
+/* ------------------------ */
