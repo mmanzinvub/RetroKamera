@@ -43,11 +43,13 @@ Header design
     text-decoration: none;
     padding: 10px 15px;
     border: 2px solid white;
+    transition: all 0.3s ease;
 }
 
 .header-link:hover {
     color: black;
     background-color: white;
+    transform: scale(1.1);
 }
 
 .header-link i {
@@ -84,17 +86,20 @@ Navbar design
 }
 
 .navbar-item a {
+    display: inline-block;
     color: white;
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
     padding: 5px;
     border: 2px solid white;
+    transition: all 0.3s ease;
 }
 
 .navbar-item a:hover {
     background-color: white;
     color: black;
+    transform: scale(1.1);
 }
 
 /*
@@ -124,7 +129,8 @@ Product card design
 
 .card-img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .card-body {
@@ -146,11 +152,13 @@ Product card design
     padding: 10px 20px;
     font-weight: bold;
     border: 3px solid white;
+    transition: all 0.3s ease;
 }
 
 .btn-buy:hover {
     color: black;
     background-color: white;
+    transform: scale(1.1);
 }
 
 /*
@@ -216,7 +224,7 @@ END Footer design
 
 /* 
 ------------------------
-cameras.html layout
+cameras,lens,equipment,film layout
 ------------------------
 */
 
