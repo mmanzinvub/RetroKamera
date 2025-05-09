@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
+
     <!--
     <link rel="stylesheet" href="css/bootstrap.min.css">
     -->
@@ -22,8 +23,8 @@
             <a href="index.html"><img src="img/logo.png" id="logo" alt="RetroKamera Logo"></a>
         </div>
         <div id="icons-container">
-            <a href="/account.html" class="header-link"><i class="fa-solid fa-user"></i> LOGIN</a>
-            <a href="/cart.html" class="header-link"><i class="fa-solid fa-cart-shopping"></i> CART</a>
+            <a href="./account.html" class="header-link"><i class="fa-solid fa-user"></i> PRIJAVA</a>
+            <a href="./cart.html" class="header-link"><i class="fa-solid fa-cart-shopping"></i> KOŠARICA</a>
         </div>
     </div>
     
@@ -73,7 +74,7 @@
                         <div class="card-type">SLR</div>
                         <div class="card-title">MINOLTA SRT 101</div>
                         <div class="card-price">180.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('MINOLTA SRT 101', 180.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
                 <div class="card">
@@ -82,7 +83,7 @@
                         <div class="card-type">SLR</div>
                         <div class="card-title">MINOLTA XE1</div>
                         <div class="card-price">180.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('MINOLTA XE1', 180.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
             </div>
@@ -118,4 +119,8 @@
             </ul>
         </div>
     </footer>
+
+    <script src="script.js"></script>
+    
 </body>
+

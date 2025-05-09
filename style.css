@@ -207,13 +207,13 @@ Footer design
     padding: 5px 10px;
     display: inline-block;
     border: 2px solid white;
-    transition: all 0.3s ease; /*dodati animacije za ostale*/
+    transition: all 0.3s ease;
 }
 
 .footer-list a:hover {
     background-color: white;
     color: black;
-    transform: scale(1.1);  /*dodati animacije za ostale*/
+    transform: scale(1.1);
 }
 
 /*
@@ -345,7 +345,7 @@ Main layout design
     margin-bottom: 12px;
 }
 
-.products-page .btn-buy {
+.products-page .add-to-cart {
     display: inline-block;
     text-decoration: none;
     background-color: black;
@@ -353,15 +353,100 @@ Main layout design
     padding: 10px 20px;
     font-weight: bold;
     border: 3px solid white;
+    transition: all 0.3s ease;
 }
 
-.products-page .btn-buy:hover {
+.products-page .add-to-cart:hover {
     color: black;
     background-color: white;
+    transform: scale(1.1);
 }
 
 /* 
 END Main layout design
+*/
+
+/* ------------------------ */
+
+/* 
+Cart layout design
+*/
+
+.cart-container {
+    width: 100%;
+    margin: 20px auto;
+    background: black;
+    border: 3px solid white;
+    padding: 20px 20px 20px 20px;
+    box-sizing: border-box;
+  }
+  
+  .cart-title {
+    color: white;
+    font-size: 2em;
+    letter-spacing: 3px;
+    font-weight: bold;
+    border-bottom: 3px solid white;
+    margin-bottom: 30px;
+  }
+  
+  .cart-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 3px solid white;
+    background: black;
+    color: white;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+  }
+  
+  .cart-item-name {
+    font-size: 1.3em;
+    font-weight: bold;
+  }
+  
+  .cart-item-qty {
+    font-size: 1.1em;
+    color: grey;
+  }
+  
+  .cart-item-price {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-right: 20px;
+  }
+  
+  .cart-remove {
+    margin-left: 20px;
+    font-size: 1.1em;
+    padding: 10px 20px;
+  }
+  
+  .cart-total-row {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 30px;
+    gap: 14px;
+  }
+  
+  .cart-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+  }
+  
+  .cart-actions .btn-buy {
+    font-size: 1.2em;
+    padding: 10px 20px;
+  }
+
+/* 
+END Cart layout design
 */
 
 /* ------------------------ */
