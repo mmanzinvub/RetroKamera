@@ -161,6 +161,13 @@ Product card design
     transform: scale(1.1);
 }
 
+.lens-type {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 5px;
+}
+
 /*
 END Product card design
 */

@@ -41,9 +41,9 @@
             <div class="filter-section">
                 <h3 class="filter-title">KATEGORIJE</h3>
                 <ul class="filter-list">
-                    <li><label><input type="checkbox" name="category" value="35mm"> 35mm</label></li>
-                    <li><label><input type="checkbox" name="category" value="120mm"> 120mm</label></li>
-                    <li><label><input type="checkbox" name="category" value="Instant Film"> Instant Film</label></li>
+                    <li><label><input type="checkbox" name="category" value="35mm" onchange="filterProducts()">35mm</label></li>
+                    <li><label><input type="checkbox" name="category" value="120mm" onchange="filterProducts()">120mm</label></li>
+                    <li><label><input type="checkbox" name="category" value="Instant Film" onchange="filterProducts()">Instant Film</label></li>
                 </ul>
             </div>
         </aside>
@@ -56,7 +56,7 @@
                         <div class="card-type">35mm</div>
                         <div class="card-title">Kodak Gold 200</div>
                         <div class="card-price">15.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Kodak Gold 200', 15.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
                 <div class="card">
@@ -65,7 +65,7 @@
                         <div class="card-type">35mm</div>
                         <div class="card-title">Agfa APX 100</div>
                         <div class="card-price">12.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Agfa APX 100', 12.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
                 <div class="card">
@@ -74,7 +74,7 @@
                         <div class="card-type">35mm</div>
                         <div class="card-title">Candido 400</div>
                         <div class="card-price">17.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Candido 400', 17.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
                 <div class="card">
@@ -83,7 +83,7 @@
                         <div class="card-type">35mm</div>
                         <div class="card-title">Candido 800</div>
                         <div class="card-price">20.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Candido 800', 20.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
                 <div class="card">
@@ -92,7 +92,7 @@
                         <div class="card-type">35mm</div>
                         <div class="card-title">Wolfen NC 500</div>
                         <div class="card-price">25.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Wolfen NC 500', 25.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
                 <div class="card">
@@ -101,7 +101,7 @@
                         <div class="card-type">Instant Film</div>
                         <div class="card-title">Polaroid Color 600</div>
                         <div class="card-price">30.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Polaroid Color 600', 30.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
             </div>
@@ -137,4 +137,6 @@
             </ul>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>

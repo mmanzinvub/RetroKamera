@@ -1,3 +1,4 @@
+//add to cart
 function addToCart(name, price) {
     let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
     let foundObject = cart.find(object => object.name === name);
@@ -34,7 +35,7 @@ function renderCart() {
         let objectTotalPrice = object.price * object.qty;
 
         totalCartPrice += objectTotalPrice;
-        
+
         html += `
             <div class="cart-item">
                 <div>
@@ -64,8 +65,39 @@ function removeFromCart(index) {
     renderCart();
 }
 
-
-// Only call renderCart on cart.html
 if (document.getElementById('cart-items')) {
     renderCart();
+}
+
+//filters for products
+function filterProducts() {
+    let categoryFilters = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb => cb.value);
+    let brandFilters = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(cb => cb.value);
+
+    let cards = document.querySelectorAll('.card');
+
+    cards.forEach(card => {
+        let lensTypeDiv = card.querySelector('.lens-type');
+        let categoryDiv = lensTypeDiv ? lensTypeDiv : card.querySelector('.card-type');
+        let categoryText = categoryDiv ? categoryDiv.textContent.trim() : '';
+        let cardTitle = card.querySelector('.card-title') ? card.querySelector('.card-title').textContent.trim() : '';
+        let isLensPage = !!lensTypeDiv;
+        let categoryMatch;
+
+        if (categoryFilters.length === 0) {
+            categoryMatch = true;
+        } else if (isLensPage) {
+            categoryMatch = categoryFilters.every(f => categoryText.includes(f));
+        } else {
+            categoryMatch = categoryFilters.some(f => categoryText === f);
+        }
+
+        let brandMatch = brandFilters.length === 0 || brandFilters.some(brand => cardTitle.toLowerCase().includes(brand.toLowerCase()));
+
+        if (categoryMatch && brandMatch) {
+            card.style.display = '';
+        } else {
+            card.style.display = 'none';
+        }
+    });
 }

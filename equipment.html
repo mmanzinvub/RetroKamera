@@ -41,10 +41,10 @@
             <div class="filter-section">
                 <h3 class="filter-title">KATEGORIJE</h3>
                 <ul class="filter-list">
-                    <li><label><input type="checkbox" name="category" value="Bljeskalice"> Bljeskalice</label></li>
-                    <li><label><input type="checkbox" name="category" value="Stativi"> Stativi</label></li>
-                    <li><label><input type="checkbox" name="category" value="Okidaci"> Okidači</label></li>
-                    <li><label><input type="checkbox" name="category" value="Skeneri"> Skeneri</label></li>
+                    <li><label><input type="checkbox" name="category" value="Bljeskalica" onchange="filterProducts()">Bljeskalice</label></li>
+                    <li><label><input type="checkbox" name="category" value="Stativ" onchange="filterProducts()">Stativi</label></li>
+                    <li><label><input type="checkbox" name="category" value="Okidač" onchange="filterProducts()">Okidači</label></li>
+                    <li><label><input type="checkbox" name="category" value="Skener" onchange="filterProducts()">Skeneri</label></li>
                 </ul>
             </div>
         </aside>
@@ -52,52 +52,52 @@
         <main class="products-main">
             <div class="cards-container">
                 <div class="card">
-                    <img src="img/vivitar283.png" class="card-img" alt="Vivitar 283">
+                    <img src="img/vivitar283.png" class="card-img" alt="Bljeskalica Vivitar 283">
                     <div class="card-body">
                         <div class="card-type">Bljeskalica</div>
-                        <div class="card-title">VIVITAR 283</div>
+                        <div class="card-title">Vivitar 283</div>
                         <div class="card-price">50.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Vivitar 283', 50.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="img/vivitar285.png" class="card-img" alt="Vivitar 285">
+                    <img src="img/vivitar285.png" class="card-img" alt="Bljesklica Vivitar 285">
                     <div class="card-body">
                         <div class="card-type">Bljeskalica</div>
-                        <div class="card-title">VIVITAR 285</div>
+                        <div class="card-title">Vivitar 285</div>
                         <div class="card-price">70.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Vivitar 285', 70.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="img/cullmann-alpha-stativ.png" class="card-img" alt="Cullmann Alpha 1800">
+                    <img src="img/cullmann-alpha-stativ.png" class="card-img" alt="Stativ Cullmann Alpha 1800">
                     <div class="card-body">
                         <div class="card-type">Stativ</div>
                         <div class="card-title">Cullmann Alpha 1800</div>
                         <div class="card-price">40.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Cullmann Alpha 1800', 40.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="img/shutter-release-cable.png" class="card-img" alt="Shutter release cable">
+                    <img src="img/shutter-release-cable.png" class="card-img" alt="Okidač za fotoaparat 1m">
                     <div class="card-body">
                         <div class="card-type">Okidač</div>
                         <div class="card-title">Okidač za fotoaparat 1m</div>
                         <div class="card-price">10.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Okidač za fotoaparat 1m', 10.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
 
                 <div class="card">
-                    <img src="img/lomography-scanner.png" class="card-img" alt="Lomography scanner">
+                    <img src="img/lomography-scanner.png" class="card-img" alt="Lomography skener za 35mm film">
                     <div class="card-body">
                         <div class="card-type">Skener</div>
                         <div class="card-title">Lomography skener za 35mm film</div>
                         <div class="card-price">40.00€</div>
-                        <a href="#" class="btn-buy">DODAJ U KOŠARICU</a>
+                        <a href="#" class="add-to-cart" onclick="addToCart('Lomography skener za 35mm film', 40.00)">DODAJ U KOŠARICU</a>
                     </div>
                 </div>
             </div>
@@ -133,4 +133,6 @@
             </ul>
         </div>
     </footer>
+
+    <script src="script.js"></script>
 </body>
