@@ -1,11 +1,13 @@
 function addToCart(name, price) {
     let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
-    let found = cart.find(item => item.name === name);
-    if (found) {
-        found.qty += 1;
+    let foundObject = cart.find(object => object.name === name);
+
+    if (foundObject) {
+        foundObject.qty += 1;
     } else {
         cart.push({ name, price, qty: 1 });
     }
+
     sessionStorage.setItem('cart', JSON.stringify(cart));
     window.location.href = 'cart.html';
 }
@@ -14,9 +16,11 @@ function renderCart() {
     let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
     let itemsDiv = document.getElementById('cart-items');
     let totalSpan = document.getElementById('cart-total');
-    let total = 0;
+    let totalCartPrice = 0;
 
-    if (!itemsDiv || !totalSpan) return;
+    if (!itemsDiv || !totalSpan) {
+        return;
+    }
 
     if (cart.length === 0) {
         itemsDiv.innerHTML = '<p class="cart-item-name" style="color:white;">Košarica je prazna.</p>';
@@ -25,32 +29,37 @@ function renderCart() {
     }
 
     let html = '';
-    cart.forEach((item, idx) => {
-        let itemTotal = item.price * item.qty;
-        total += itemTotal;
+
+    cart.forEach((object, index) => {
+        let objectTotalPrice = object.price * object.qty;
+
+        totalCartPrice += objectTotalPrice;
+        
         html += `
             <div class="cart-item">
                 <div>
-                    <span class="cart-item-name">${item.name}</span>
-                    <span class="cart-item-qty"> ${item.qty} kom</span>
+                    <span class="cart-item-name">${object.name}</span>
+                    <span class="cart-item-qty"> ${object.qty} kom</span>
                 </div>
-                <div class="cart-item-price">${itemTotal.toFixed(2)}€</div>
-                <button class="btn-buy cart-remove" onclick="removeFromCart(${idx})">Ukloni</button>
+                <div class="cart-item-price">${objectTotalPrice.toFixed(2)}€</div>
+                <button class="btn-buy cart-remove" onclick="removeFromCart(${index})">Ukloni</button>
             </div>
         `;
     });
 
     itemsDiv.innerHTML = html;
-    totalSpan.textContent = total.toFixed(2) + '€';
+    totalSpan.textContent = totalCartPrice.toFixed(2) + '€';
 }
 
-function removeFromCart(idx) {
+function removeFromCart(index) {
     let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
-    if (cart[idx].qty > 1) {
-        cart[idx].qty -= 1;
+
+    if (cart[index].qty > 1) {
+        cart[index].qty -= 1;
     } else {
-        cart.splice(idx, 1);
+        cart.splice(index, 1);
     }
+
     sessionStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
 }
