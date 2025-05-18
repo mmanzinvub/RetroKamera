@@ -71,8 +71,8 @@ if (document.getElementById('cart-items')) {
 
 //filters for products
 function filterProducts() {
-    let categoryFilters = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(cb => cb.value);
-    let brandFilters = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(cb => cb.value);
+    let categoryFilters = Array.from(document.querySelectorAll('input[name="category"]:checked')).map(checkbox => checkbox.value);
+    let brandFilters = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(checkbox => checkbox.value);
 
     let cards = document.querySelectorAll('.card');
 
