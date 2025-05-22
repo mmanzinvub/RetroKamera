@@ -78,18 +78,42 @@ function filterProducts() {
 
     cards.forEach(card => {
         let lensTypeDiv = card.querySelector('.lens-type');
-        let categoryDiv = lensTypeDiv ? lensTypeDiv : card.querySelector('.card-type');
-        let categoryText = categoryDiv ? categoryDiv.textContent.trim() : '';
-        let cardTitle = card.querySelector('.card-title') ? card.querySelector('.card-title').textContent.trim() : '';
-        let isLensPage = !!lensTypeDiv;
-        let categoryMatch;
 
+        let categoryDiv;
+        if (lensTypeDiv != NULL) {
+            categoryDiv = lensTypeDiv;
+        } else {
+            categoryDiv = card.querySelector('.card-type');
+        }
+
+        let categoryText;
+        if (categoryDiv != NULL) {
+            categoryText = categoryDiv.textContent.trim();
+        } else {
+            categoryText = '';
+        }
+
+        let cardTitle;
+        if (card.querySelector('.card-title') != NULL) {
+            cardTitle = card.querySelector('.card-title').textContent.trim();
+        } else {
+            cardTitle = '';
+        }
+
+        let isLensPage;
+        if (lensTypeDiv != NULL) {
+            isLensPage = true;
+        } else {
+            isLensPage = false;
+        }
+
+        let categoryMatch;
         if (categoryFilters.length === 0) {
             categoryMatch = true;
-        } else if (isLensPage) {
-            categoryMatch = categoryFilters.every(f => categoryText.includes(f));
+        } else if (isLensPage  === true) {
+            categoryMatch = categoryFilters.every(filter => categoryText.includes(filter));
         } else {
-            categoryMatch = categoryFilters.some(f => categoryText === f);
+            categoryMatch = categoryFilters.some(filter => categoryText === filter);
         }
 
         let brandMatch = brandFilters.length === 0 || brandFilters.some(brand => cardTitle.toLowerCase().includes(brand.toLowerCase()));
