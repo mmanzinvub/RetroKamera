@@ -80,28 +80,28 @@ function filterProducts() {
         let lensTypeDiv = card.querySelector('.lens-type');
 
         let categoryDiv;
-        if (lensTypeDiv != NULL) {
+        if (lensTypeDiv != null) {
             categoryDiv = lensTypeDiv;
         } else {
             categoryDiv = card.querySelector('.card-type');
         }
 
         let categoryText;
-        if (categoryDiv != NULL) {
+        if (categoryDiv != null) {
             categoryText = categoryDiv.textContent.trim();
         } else {
             categoryText = '';
         }
 
         let cardTitle;
-        if (card.querySelector('.card-title') != NULL) {
+        if (card.querySelector('.card-title') != null) {
             cardTitle = card.querySelector('.card-title').textContent.trim();
         } else {
             cardTitle = '';
         }
 
         let isLensPage;
-        if (lensTypeDiv != NULL) {
+        if (lensTypeDiv != null) {
             isLensPage = true;
         } else {
             isLensPage = false;
