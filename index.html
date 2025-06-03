@@ -10,6 +10,8 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
@@ -68,8 +70,55 @@
                 </div>
             </div>
         </div>
+    
+        <div class="graph">
+            <div class="best-selling">
+                <canvas id="bestsellerChart" width="200" height="200"></canvas>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function () {
+                        var canvas = document.getElementById('bestsellerChart');
+                        if (canvas) {
+                            var ctx = canvas.getContext('2d');
+                            var bestsellerChart = new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: ['MINOLTA SRT 101', 'MINOLTA XE1', 'Kodak Gold 200', 'Canon AE-1'],
+                                    datasets: [{
+                                        label: 'Broj prodanih komada',
+                                        data: [12, 8, 15, 6],
+                                        backgroundColor: [
+                                            'rgba(255, 215, 0, 0.7)',
+                                            'rgba(255,255,255,0.7)',
+                                            'rgba(0,0,0,0.7)',
+                                            'rgba(200,200,200,0.7)'
+                                        ],
+                                        borderColor: [
+                                            'rgba(255, 215, 0, 1)',
+                                            'rgba(255,255,255,1)',
+                                            'rgba(0,0,0,1)',
+                                            'rgba(200,200,200,1)'
+                                        ],
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    plugins: {
+                                        legend: { display: false }
+                                    },
+                                    scales: {
+                                        y: {
+                                            beginAtZero: true
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    });
+                </script>
+            </div>
+        </div>
     </div>
-
+    
     <footer class="footer">
         <div class="footer-section">
             <h3 class="footer-title">O RETROKAMERA</h3>
@@ -80,7 +129,7 @@
                 <li><a href="#">Zaštita privatnosti</a></li>
             </ul>
         </div>
-
+    
         <div class="footer-section">
             <h3 class="footer-title">KORISNIČKI RAČUN</h3>
             <ul class="footer-list">
@@ -88,7 +137,7 @@
                 <li><a href="#">Narudžbe i povrati</a></li>
             </ul>
         </div>
-
+    
         <div class="footer-section">
             <h3 class="footer-title">ZAPRATITE NAS</h3>
             <ul class="footer-list">
@@ -99,7 +148,7 @@
             </ul>
         </div>
     </footer>
-
+    
     <script src="script.js"></script>
 </body>
 

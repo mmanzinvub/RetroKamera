@@ -9,7 +9,7 @@ function addToCart(name, price) {
     }
 
     sessionStorage.setItem('cart', JSON.stringify(cart));
-    
+
     Swal.fire({
         icon: 'success',
         title: 'Dodano u košaricu!',
