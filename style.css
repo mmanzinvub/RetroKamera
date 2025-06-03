@@ -1,10 +1,10 @@
 * {
     text-decoration: none;
     font-style: normal;
-    background-color: black;
 }
 
 body {
+    background-color: black;
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 20px;

@@ -1,16 +1,23 @@
 //add to cart
 function addToCart(name, price) {
     let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
-    let foundObject = cart.find(object => object.name === name);
-
-    if (foundObject) {
-        foundObject.qty += 1;
+    let found = cart.find(item => item.name === name);
+    if (found) {
+        found.qty += 1;
     } else {
         cart.push({ name, price, qty: 1 });
     }
 
     sessionStorage.setItem('cart', JSON.stringify(cart));
-    window.location.href = 'cart.html';
+    
+    Swal.fire({
+        icon: 'success',
+        title: 'Dodano u košaricu!',
+        showConfirmButton: false,
+        timer: 1000
+    }).then(() => {
+        window.location.href = 'cart.html';
+    });
 }
 
 function renderCart() {
