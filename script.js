@@ -2,7 +2,7 @@
 function addToCart(name, price) {
     let cart = JSON.parse(sessionStorage.getItem('cart') || '[]');
     let found = cart.find(item => item.name === name);
-    if (found) {
+    if (found != null) {
         found.qty += 1;
     } else {
         cart.push({ name, price, qty: 1 });
@@ -70,6 +70,13 @@ function removeFromCart(index) {
 
     sessionStorage.setItem('cart', JSON.stringify(cart));
     renderCart();
+
+    Swal.fire({
+        icon: 'error',
+        title: 'Uklonjeno iz košarice!',
+        showConfirmButton: false,
+        timer: 1000
+    });
 }
 
 if (document.getElementById('cart-items')) {
@@ -130,5 +137,109 @@ function filterProducts() {
         } else {
             card.style.display = 'none';
         }
+    });
+}
+
+//graph
+function bestsellerChart() {
+    const canvas = document.getElementById('bestsellerChart');
+
+    if (canvas != null) {
+        const ctx = canvas.getContext('2d');
+        const bestsellerChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['MINOLTA SRT 101', 'MINOLTA XE1', 'Olympus XA2', 'Polaroid Supercolor 1000', 'Canon AE1'],
+                datasets: [{
+                    label: ' Broj prodanih komada',
+                    data: [150, 78, 62, 49, 6],
+                    backgroundColor: [
+                        'rgba(52, 102, 204, 0.7)',
+                        'rgba(38, 166, 91, 0.7)',
+                        'rgba(255, 152, 0, 0.7)',
+                        'rgba(156, 39, 176, 0.7)',
+                        'rgba(229, 57, 53, 0.7)'
+                    ],
+                    borderColor: [
+                        'rgba(52, 102, 204, 1)',
+                        'rgba(38, 166, 91, 1)',
+                        'rgba(255, 152, 0, 1)',
+                        'rgba(156, 39, 176, 1)',
+                        'rgba(229, 57, 53, 1)'
+                    ],
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    title: {
+                        display: true,
+                        text: 'Najprodavaniji fotoaparati na stranici',
+                        font: {
+                            size: 18
+                        },
+                        color: 'white',
+                    },
+                    legend: { display: false }
+                },
+                scales: {
+                    x: {
+                        ticks: {
+                            color: 'white'
+                        }
+                    },
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            color: 'white'
+                        }
+                    }
+                }
+            }
+        });
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    bestsellerChart();
+});
+
+//pay button
+const payBtn = document.getElementById('pay-btn');
+
+if (payBtn != null) {
+    payBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        Swal.fire({
+            icon: 'question',
+            title: 'Želite li platiti?',
+            showConfirmButton: true,
+            confirmButtonText: 'Da',
+            showCancelButton: true,
+            cancelButtonText: 'Ne',
+            confirmButtonColor: '#27ae60',
+            cancelButtonColor: '#e74c3c'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Plaćanje je bilo uspješno!',
+                    showConfirmButton: true,
+                    confirmButtonColor: '#27ae60',
+                }).then(() => {
+                    sessionStorage.removeItem('cart');
+                    window.location.href = 'index.html';
+                });
+            } else if (result.dismiss === Swal.DismissReason.cancel) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Plaćanje je bilo otkazano',
+                    showConfirmButton: false,
+                    timer: 1000
+                });
+            }
+        });
     });
 }

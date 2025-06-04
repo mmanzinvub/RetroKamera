@@ -6,17 +6,17 @@
 
     <title>Retrokamera</title>
 
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <script src="https://kit.fontawesome.com/0abbd622bb.js" crossorigin="anonymous"></script>
 
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.all.min.js "></script>
+
+    <link href=" https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css " rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.22.0/dist/sweetalert2.min.css">
 </head>
 
 <body>
@@ -73,46 +73,7 @@
     
         <div class="graph">
             <div class="best-selling">
-                <canvas id="bestsellerChart" width="200" height="200"></canvas>
-                <script>
-                    document.addEventListener('DOMContentLoaded', function () {
-                        var canvas = document.getElementById('bestsellerChart');
-                        if (canvas) {
-                            var ctx = canvas.getContext('2d');
-                            var bestsellerChart = new Chart(ctx, {
-                                type: 'bar',
-                                data: {
-                                    labels: ['MINOLTA SRT 101', 'MINOLTA XE1', 'Canon AE1'],
-                                    datasets: [{
-                                        label: 'Broj prodanih komada',
-                                        data: [150, 55, 10],
-                                        backgroundColor: [
-                                            'rgba(255, 215, 0, 0.7)',
-                                            'rgba(255,255,255,0.7)',
-                                            'rgba(200,200,200,0.7)'
-                                        ],
-                                        borderColor: [
-                                            'rgba(255, 215, 0, 1)',
-                                            'rgba(255,255,255,1)',
-                                            'rgba(200,200,200,1)'
-                                        ],
-                                        borderWidth: 3
-                                    }]
-                                },
-                                options: {
-                                    plugins: {
-                                        legend: { display: false }
-                                    },
-                                    scales: {
-                                        y: {
-                                            beginAtZero: true
-                                        }
-                                    }
-                                }
-                            });
-                        }
-                    });
-                </script>
+                <canvas id="bestsellerChart" width="100" height="300"></canvas>
             </div>
         </div>
     </div>
