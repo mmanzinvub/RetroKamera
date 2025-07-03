@@ -283,6 +283,7 @@ Sidebar design
 }
 
 .filter-list input[type="checkbox"] {
+    cursor: pointer;
     accent-color: white;
     margin-right: 8px;
     width: 16px;
@@ -319,7 +320,7 @@ Main layout design
     border: 3px solid white;
     background-color: black;
     text-align: center;
-    margin: 0 15px 15px 0;
+    margin: 0;
 }
 
 .products-page .card-img {
@@ -386,18 +387,18 @@ Cart layout design
     border: 3px solid white;
     padding: 20px 20px 20px 20px;
     box-sizing: border-box;
-  }
-  
-  .cart-title {
+}
+
+.cart-title {
     color: white;
     font-size: 2em;
     letter-spacing: 3px;
     font-weight: bold;
     border-bottom: 3px solid white;
     margin-bottom: 30px;
-  }
-  
-  .cart-item {
+}
+
+.cart-item {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -406,31 +407,31 @@ Cart layout design
     color: white;
     padding: 10px 15px;
     margin-bottom: 20px;
-  }
-  
-  .cart-item-name {
+}
+
+.cart-item-name {
     font-size: 1.3em;
     font-weight: bold;
-  }
-  
-  .cart-item-qty {
+}
+
+.cart-item-qty {
     font-size: 1.1em;
     color: grey;
-  }
-  
-  .cart-item-price {
+}
+
+.cart-item-price {
     font-size: 1.5em;
     font-weight: bold;
     margin-right: 20px;
-  }
-  
-  .cart-remove {
+}
+
+.cart-remove {
     margin-left: 20px;
     font-size: 1.1em;
     padding: 10px 20px;
-  }
-  
-  .cart-total-row {
+}
+
+.cart-total-row {
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -439,21 +440,137 @@ Cart layout design
     font-weight: bold;
     margin-top: 30px;
     gap: 14px;
-  }
-  
-  .cart-actions {
+}
+
+.cart-actions {
     display: flex;
     justify-content: flex-end;
     margin-top: 20px;
-  }
-  
-  .cart-actions .btn-buy {
+}
+
+.cart-actions .btn-buy {
     font-size: 1.2em;
     padding: 10px 20px;
-  }
+}
 
 /* 
 END Cart layout design
 */
 
 /* ------------------------ */
+
+/* 
+RWD
+*/
+
+/*
+Laptop
+*/
+@media (max-width: 1440px) {
+    .cards-container {
+        gap: 30px;
+    }
+
+    .card {
+        flex: 0 0 calc(50% - 30px);
+        margin: 0;
+        box-sizing: border-box;
+    }
+}
+
+/*
+Tablet
+*/
+@media (max-width: 1024px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .cameras-page .header,
+    .lens-page .header,
+    .equipment-page .header,
+    .film-page .header {
+        border: 0px;
+    }
+
+    .navbar {
+        display: none;
+    }
+
+    .cards-container {
+        padding: 20px 0 20px 0;
+    }
+
+    .products-page {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .products-main {
+        padding: 10px;
+    }
+
+    .products-page .card {
+        width: 250px;
+        margin: 15px;
+    }
+
+    .cameras-page .products-page .cards-container,
+    .lens-page .products-page .cards-container,
+    .equipment-page .products-page .cards-container,
+    .film-page .products-page .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cameras-page .products-page .card,
+    .lens-page .products-page .card,
+    .equipment-page .products-page .card,
+    .film-page .products-page .card {
+        width: 80%;
+        font-size: 1.2em;
+    }
+
+    .footer {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+}
+
+/* 
+Phone
+*/
+@media (max-width: 600px) {
+    .index-page .cards-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .index-page .card {
+        width: 90%;
+    }
+
+    .cart-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 15px 10px;
+    }
+
+    .cart-remove {
+        margin: 10px 0 0 0;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
